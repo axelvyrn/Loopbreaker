@@ -10,7 +10,7 @@ A minimalist psychological game where players detect hidden patterns or get trap
 
 ## 🚀 Run Locally
 
-```bash
-git clone https://github.com/your-username/loopbreaker.git
-cd loopbreaker
-python main.py
+Download the zip file.
+Extract the contents.
+Go to the `dist/` folder and run `main.exe`
+Bingo!
