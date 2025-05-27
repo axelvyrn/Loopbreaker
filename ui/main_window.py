@@ -1,16 +1,20 @@
 import time
 import random
+from reset import delete_directory_contents, reset_game
 from PyQt6.QtWidgets import (
     QWidget, QLabel, QPushButton, QVBoxLayout, QMessageBox
 )
 from PyQt6.QtGui import QFont, QPalette, QColor
-from PyQt6.QtWidgets import QMainWindow
+from PyQt6.QtWidgets import QMainWindow, QApplication
 from PyQt6.QtCore import Qt
 
 from logic.game_logic import generate_sequence
 from utils.profile_manager import load_profile, update_stats, load_profile
 from config import VINTAGE_THEME, DEFAULT_ROUNDS, SOUNDS_DIR
 import pygame
+from PyQt6.QtWidgets import QMessageBox
+from config import PROFILE_DIR, DATA_DIR
+import shutil
 
 pygame.mixer.init()
 
@@ -50,18 +54,18 @@ class MainWindow(QMainWindow):
 
         # Create a central widget and layout
         central_widget = QWidget()
-        layout = QVBoxLayout()
-        central_widget.setLayout(layout)
+        self.layout = QVBoxLayout()
+        central_widget.setLayout(self.layout)
         self.setCentralWidget(central_widget)
 
         # Add widgets
         self.title = QLabel(f"🎮 LOOPBREAKER ID: {self.profile['username']}")
         self.title.setAlignment(Qt.AlignmentFlag.AlignCenter)
-        layout.addWidget(self.title)
+        self.layout.addWidget(self.title)
 
         self.seq_label = QLabel("Sequence will appear here.")
         self.seq_label.setAlignment(Qt.AlignmentFlag.AlignCenter)
-        layout.addWidget(self.seq_label)
+        self.layout.addWidget(self.seq_label)
 
         self.yes_button = QPushButton("YES (Pattern)")
         self.no_button = QPushButton("NO (Noise)")
@@ -69,12 +73,17 @@ class MainWindow(QMainWindow):
         self.yes_button.clicked.connect(lambda: self.evaluate_answer("yes"))
         self.no_button.clicked.connect(lambda: self.evaluate_answer("no"))
 
-        layout.addWidget(self.yes_button)
-        layout.addWidget(self.no_button)
+        self.layout.addWidget(self.yes_button)
+        self.layout.addWidget(self.no_button)
+        self.reset_button = QPushButton("Reset Game")
+        self.reset_button.clicked.connect(lambda: reset_game())
+        self.layout.addWidget(self.reset_button)
+        self.close()
 
-        # Optional: spacing
-        layout.setSpacing(20)
-        layout.setContentsMargins(40, 40, 40, 40)
+
+        #spacing
+        self.layout.setSpacing(20)
+        self.layout.setContentsMargins(40, 40, 40, 40)
 
 
     def next_round(self):
