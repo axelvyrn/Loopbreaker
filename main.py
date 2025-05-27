@@ -1,14 +1,14 @@
-# main.py
-
 import sys
 from PyQt6.QtWidgets import QApplication
 from ui.main_window import MainWindow
+from utils.profile_manager import load_profile_menu
 
 def main():
     app = QApplication(sys.argv)
     app.setApplicationName("Loopbreaker v3")
 
-    window = MainWindow()
+    profile = load_profile_menu()
+    window = MainWindow(profile)
     window.show()
 
     sys.exit(app.exec())

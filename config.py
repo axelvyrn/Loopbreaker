@@ -1,14 +1,15 @@
-# config.py
-
 from pathlib import Path
 
 # === Theme === #
 VINTAGE_THEME = {
-    "bg_color": "#F0DC82",     # Vintage black
-    "text_color": "#000000",   # CRT green
+    "bg_color": "#F0DC82",     # Vintage chrome
+    "text_color": "#000000",   # CRT Black
     "font": "Courier New",
     "font_size": 14
 }
+# === PROFILE SETTINGS === #
+PROFILE_DIR = Path("data/profiles")
+PROFILE_DIR.mkdir(parents=True, exist_ok=True)
 
 # === File Paths === #
 BASE_DIR = Path(__file__).parent
