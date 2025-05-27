@@ -3,7 +3,9 @@
 > *"Know the pattern. Break the noise."*
 
 Loopbreaker v2 is a reflex + pattern recognition game that challenges your brain's predictive powers. Built with PyQt6 and Pygame, it features saved profiles, game stats, and a vintage-styled GUI.
-![Tiresias](https://github.com/user-attachments/assets/87609252-fc95-4129-bd75-af2c28274e64)
+
+![image](https://github.com/user-attachments/assets/7af37070-7a9e-48a1-84f1-276a44679798)
+
 
 ---
 
