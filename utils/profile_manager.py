@@ -3,6 +3,8 @@ import json
 from config import PROFILE_DIR
 from pathlib import Path
 from utils.encryption import encrypt_data, decrypt_data
+from PyQt6.QtWidgets import QInputDialog, QMessageBox
+from PyQt6.QtCore import Qt
 
 def get_profile_path(username):
     return PROFILE_DIR / f"{username.lower()}.enc"
@@ -15,26 +17,56 @@ def save_profile(profile: dict):
     with open(profile_path, "wb") as f:
         f.write(encrypted)
 
+def load_profile(username):
+    with open(PROFILE_DIR / f"{username}.enc", "rb") as f:
+        encrypted = f.read()
+    decrypted = decrypt_data(encrypted, MASTER_KEY)
+    return json.loads(decrypted)
+
 def load_profile_menu():
-    """Load existing profile or create new one."""
+    """Load or create/delete a profile using GUI."""
     files = [f.stem for f in PROFILE_DIR.glob("*.enc")]
-    print("\n🎮 LOOPBREAKER ID SYSTEM")
-    if files:
-        print("Existing IDs:")
-        for i, f in enumerate(files):
-            print(f"{i + 1}. {f}")
-        print("0. Create new ID")
-        choice = input("Select an ID (by number) or create new: ").strip()
-        if choice == "0":
+
+    while True:
+        options = files + ["➕ Create New Profile", "🗑️ Delete Profile"]
+        item, ok = QInputDialog.getItem(None, "Loopbreaker ID", "Select your ID:", options, editable=False)
+
+        if not ok:
+            QMessageBox.warning(None, "Profile Required", "A profile is required to continue.")
+            os.close()
+
+        if item == "➕ Create New Profile":
             return create_new_profile()
-        elif choice.isdigit() and 1 <= int(choice) <= len(files):
-            return load_profile(files[int(choice) - 1])
-    
-    # Fallback
-    return create_new_profile()
+
+        elif item == "🗑️ Delete Profile":
+            if not files:
+                QMessageBox.information(None, "No Profiles", "There are no profiles to delete.")
+                continue
+            profile_to_delete, ok = QInputDialog.getItem(None, "Delete Profile", "Choose a profile to delete:", files, editable=False)
+            if ok:
+                delete_profile(profile_to_delete)
+                files.remove(profile_to_delete)
+            continue  # Loop back to show updated list
+
+        elif item in files:
+            return load_profile(item)
 
 def create_new_profile():
-    username = input("🆕 Enter a new Loopbreaker ID: ").strip()
+    """Create a new profile using GUI input."""
+    while True:
+        username, ok = QInputDialog.getText(None, "Create New Profile", "Enter new profile name:")
+        if not ok:
+            QMessageBox.warning(None, "Profile Required", "A profile is required to continue.")
+            sys.exit(0)
+        username = username.strip()
+        if username:
+            break  # Valid name entered
+        
+    path = PROFILE_DIR / f"{username}.enc"
+    if path.exists():
+        QMessageBox.warning(None, "Profile Exists", f"The profile '{username}' already exists.")
+        return create_new_profile()
+        
     profile = {
         "username": username,
         "games_played": 0,
@@ -45,28 +77,15 @@ def create_new_profile():
     save_profile(profile)
     return profile
 
-def load_profile(username):
-    profile_path = get_profile_path(username)
-    if not profile_path.exists():
-        print(f"❌ Profile '{username}' does not exist.")
-        return create_new_profile()
-
-    with open(profile_path, "rb") as f:
-        encrypted = f.read()
-    try:
-        raw = decrypt_data(encrypted)
-        return json.loads(raw)
-    except Exception as e:
-        print("⚠️ Error loading profile:", e)
-        return create_new_profile()
-
 def delete_profile(username):
-    profile_path = get_profile_path(username)
-    if profile_path.exists():
-        os.remove(profile_path)
-        print(f"🗑️ Profile '{username}' deleted.")
+    """Delete an encrypted profile file by name."""
+    path = get_profile_path(username)
+    if path.exists():
+        path.unlink()
+        QMessageBox.information(None, "Deleted", f"Profile '{username}' has been deleted.")
     else:
-        print(f"❌ No such profile found.")
+        QMessageBox.warning(None, "Not Found", f"Profile '{username}' does not exist.")
+
 
         
 def update_stats(profile: dict, new_score: int, reaction_time: float, streak: int = 0):
