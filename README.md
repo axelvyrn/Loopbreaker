@@ -1,5 +1,5 @@
 # 🌀 Loopbreaker v2
-![Python](https://img.shields.io/badge/%F0%9F%92%98_Built_With-Python-red)      ![Sponsor](https://img.shields.io/badge/Zap_some_sats_to-holonite@speed.app-blue)
+![Python](https://img.shields.io/badge/%F0%9F%92%98_Built_With-Python-red)      ![Sponsor](https://img.shields.io/badge/⚡_Zap_some_sats_to-holonite@speed.app-blue)
 
 > *"Know the pattern. Break the noise."*
 
