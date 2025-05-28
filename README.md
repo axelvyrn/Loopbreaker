@@ -1,11 +1,10 @@
 # 🌀 Loopbreaker v2
+![Python](https://img.shields.io/badge/%F0%9F%92%98_Built_With-Python-red)      ![Sponsor](https://img.shields.io/badge/Zap_some_sats_to-holonite@speed.app-blue)
 
 > *"Know the pattern. Break the noise."*
 
 Loopbreaker v2 is a reflex + pattern recognition game that challenges your brain's predictive powers. Built with PyQt6 and Pygame, it features saved profiles, game stats, and a vintage-styled GUI.
-
-![image](https://github.com/user-attachments/assets/7af37070-7a9e-48a1-84f1-276a44679798)
-
+![Github Banner](https://github.com/user-attachments/assets/1abdba3c-cd71-4386-8f95-34ae28e0c332)
 
 ---
 
