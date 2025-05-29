@@ -1,0 +1,56 @@
+==================================================================
+https://keybase.io/istealkids
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of https://loopbreaker.foo.ng
+  * I am istealkids (https://keybase.io/istealkids) on keybase.
+  * I have a public key ASDa2R5NPyU546fEDuvvyp3IZrSj7oXQjCzzLrWItheBKQo
+
+To do so, I am signing this object:
+
+{
+  "body": {
+    "key": {
+      "eldest_kid": "0120dad91e4d3f2539e3a7c40eebefca9dc866b4a3ee85d08c2cf32eb588b61781290a",
+      "host": "keybase.io",
+      "kid": "0120dad91e4d3f2539e3a7c40eebefca9dc866b4a3ee85d08c2cf32eb588b61781290a",
+      "uid": "a36cf7f826b889b1cae43542e2489e19",
+      "username": "istealkids"
+    },
+    "merkle_root": {
+      "ctime": 1748519992,
+      "hash": "baa163e6811eaa5bf5a818f781eea7b721e07f8a3077939f100da731cb57379fe9f6fac7232de1f69e0155f3c783d967733cc1e9dffab292ad455ab01e130f9c",
+      "hash_meta": "0a408e34a6988e284b47d69f4fa2e349c003b74ad9e4d755b0ad364c301407c7",
+      "seqno": 26835770
+    },
+    "service": {
+      "entropy": "XT0rb1tmQWdHs65GH5sola7V",
+      "hostname": "loopbreaker.foo.ng",
+      "protocol": "https:"
+    },
+    "type": "web_service_binding",
+    "version": 2
+  },
+  "client": {
+    "name": "keybase.io go client",
+    "version": "6.5.1"
+  },
+  "ctime": 1748520055,
+  "expire_in": 504576000,
+  "prev": "b4ef024782672c01511f996f1df36f56b5a0e4c595df961ddd6a67af69799e81",
+  "seqno": 9,
+  "tag": "signature"
+}
+
+which yields the signature:
+
+hKRib2R5hqhkZXRhY2hlZMOpaGFzaF90eXBlCqNrZXnEIwEg2tkeTT8lOeOnxA7r78qdyGa0o+6F0Iws8y61iLYXgSkKp3BheWxvYWTESpcCCcQgtO8CR4JnLAFRH5lvHfNvVrWg5MWV35Yd3Wpnr2l5noHEIPbMel8koza2Qovms6IP+xMDzE9RfLcEbfDIH12SK6svAgHCo3NpZ8RA9pLAAqUIMa7CCvvuWx3bDgMxYSNjJKtscuTLjjsIIl3XaJwQ7s5+gbdqBZP6QnZevXyoyJWSETQ3baZ+dKclDqhzaWdfdHlwZSCkaGFzaIKkdHlwZQildmFsdWXEIBgE/TaKhCOax0xtpfo3A3UR6tkDdRJ09joRZ54/gdtpo3RhZ80CAqd2ZXJzaW9uAQ==
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/istealkids
+
+==================================================================
