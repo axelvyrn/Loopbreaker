@@ -39,4 +39,5 @@ Then simply run `main.py` or if you downloaded the release, then run `main.exe`
 ## ⚡ If you liked the project...
 
 Feel free to supprt the project by sending some sats to **holonite@speed.app** or **bc1qqyvda9zsh75yymqc7vwmufwm63u8tq68fnq3ns**
-Or any other crypto to **0xc2F6bCA767b9539cf196b49E60890c8B09F01df6**
+
+Any other crypto sponsors are accepted at **0xc2F6bCA767b9539cf196b49E60890c8B09F01df6**
