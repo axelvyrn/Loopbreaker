@@ -20,7 +20,7 @@ def save_profile(profile: dict):
 def load_profile(username):
     with open(PROFILE_DIR / f"{username}.enc", "rb") as f:
         encrypted = f.read()
-    decrypted = decrypt_data(encrypted, MASTER_KEY)
+    decrypted = decrypt_data(encrypted)
     return json.loads(decrypted)
 
 def load_profile_menu():
