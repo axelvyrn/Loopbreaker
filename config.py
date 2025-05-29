@@ -1,24 +1,35 @@
+# config.py
+
 from pathlib import Path
 
-# === Theme === #
+# === Directories ===
+BASE_DIR = Path(__file__).resolve().parent
+PROFILE_DIR = BASE_DIR / "profiles"
+LOG_DIR = BASE_DIR / "logs"
+
+# Ensure necessary directories exist
+PROFILE_DIR.mkdir(exist_ok=True)
+LOG_DIR.mkdir(exist_ok=True)
+
+# === Server Configuration ===
+SERVER_HOST = "localhost"
+SERVER_PORT = 8765
+
+# === UI Themes ===
 VINTAGE_THEME = {
-    "bg_color": "#F0DC82",     # Vintage chrome
-    "text_color": "#000000",   # CRT Black
+    "bg_color": "#f5f5dc",        # Beige / parchment
+    "text_color": "#2f2f2f",      # Dark text
+    "button_color": "#a67c52",    # Muted brown
+    "accent_color": "#5e503f",    # Deeper brown
     "font": "Courier New",
     "font_size": 14
 }
-# === PROFILE SETTINGS === #
-PROFILE_DIR = Path("data/profiles")
-PROFILE_DIR.mkdir(parents=True, exist_ok=True)
 
-# === File Paths === #
-BASE_DIR = Path(__file__).parent
-DATA_DIR = BASE_DIR / "data"
-ASSETS_DIR = BASE_DIR / "assets"
-SOUNDS_DIR = ASSETS_DIR / "sounds"
+# === Game Settings ===
+INITIAL_SEQUENCE_LENGTH = 3
+SEQUENCE_GROWTH_RATE = 1  # Increase after every correct round
+REACTION_TIMEOUT = 5.0    # seconds per round
 
-PROFILE_FILE = DATA_DIR / "stats.enc"
-
-# === Game Settings === #
-DEFAULT_ROUNDS = 5
-REACTION_TIMEOUT = 10  # in seconds
+# === Multiplayer Constants ===
+MAX_PLAYERS_PER_ROOM = 2
+DEFAULT_ROOM_TIMEOUT = 30  # seconds

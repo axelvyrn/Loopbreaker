@@ -1,15 +1,15 @@
+# main.py
+
 import sys
 from PyQt6.QtWidgets import QApplication
-from ui.main_window import MainWindow
-from utils.profile_manager import load_profile_menu
+from ui.welcome_screen import WelcomeScreen
 
 def main():
     app = QApplication(sys.argv)
     app.setApplicationName("Loopbreaker v3")
 
-    profile = load_profile_menu()
-    window = MainWindow(profile)
-    window.show()
+    welcome = WelcomeScreen()
+    welcome.show()
 
     sys.exit(app.exec())
 
