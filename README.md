@@ -48,5 +48,5 @@ This project is **not open source**.
 All rights reserved © 2025 Axel Vyrn.
 
 You may not use, copy, modify, merge, publish, distribute, sublicense, or sell any part of this software without prior written permission.  
-Please contact [ghoshgairik2020@gmail.com] for licensing inquiries.
+Please contact ghoshgairik2020@gmail.com for licensing inquiries.
 
