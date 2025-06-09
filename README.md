@@ -1,5 +1,6 @@
 # 🌀 Loopbreaker v2
-[![Python](https://img.shields.io/badge/Built_With-Python-red)](#)      [![Sponsor](https://img.shields.io/badge/Website-loopbreaker.foo.ng-blue)](https://loopbreaker.foo.ng/)
+[![Python](https://img.shields.io/badge/Built_With-Python-red)](#)      [![Sponsor](https://img.shields.io/badge/Website-loopbreaker.foo.ng-blue)](https://loopbreaker.foo.ng/)    ![License: All Rights Reserved](https://img.shields.io/badge/license-All%20rights%20reserved-red.svg)
+
 
 > *"Know the pattern. Break the noise."*
 
