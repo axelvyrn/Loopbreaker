@@ -1,6 +1,3 @@
-# Copyright (c) 2025 Axel Vyrn. All rights reserved.
-# Unauthorized copying, modification, or distribution is strictly prohibited.
-
 import sys
 from PyQt6.QtWidgets import QApplication
 from ui.main_window import MainWindow
