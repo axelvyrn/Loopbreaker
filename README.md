@@ -43,11 +43,4 @@ Feel free to supprt the project by sending some sats to **holonite@speed.app** o
 
 Any other crypto sponsors are accepted at **0xc2F6bCA767b9539cf196b49E60890c8B09F01df6**
 
-## License
-
-This project is **not open source**.  
-All rights reserved © 2025 Axel Vyrn.
-
-You may not use, copy, modify, merge, publish, distribute, sublicense, or sell any part of this software without prior written permission.  
-Please contact ghoshgairik2020@gmail.com for licensing inquiries.
 
